@@ -4,6 +4,7 @@ import { Menu, X, ChevronRight, MapPin, Phone, Mail, Star, Award, Shield, Gem } 
 import logoImg from "@/imports/image.png";
 import heroDesktop from "@/imports/ChatGPT_Image_Aug_5__2026__10_32_41_AM.png";
 import heroMobile from "@/imports/ChatGPT_Image_Aug_5__2026__10_33_39_AM.png";
+import sriLankaHeritageImg from "@/imports/sri_lanka_gem_heritage.jpg";
 
 const img = (id: string, w: number, h: number) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=85`;
@@ -457,25 +458,32 @@ export default function App() {
       <section id="heritage" className="py-16 sm:py-24 md:py-28 px-5 sm:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-24 items-center">
 
-          {/* Image column — floating stat card goes below image on mobile, absolute on lg */}
-          <motion.div {...fadeUp} className="relative lg:mb-10">
-            <div className="relative overflow-hidden">
+          {/* Image column — luxury frame & floating stat card */}
+          <motion.div {...fadeUp} className="relative lg:mb-10 group">
+            <div className="relative overflow-hidden rounded-sm border border-[#c9a84c]/25 shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_30px_rgba(201,168,76,0.12)]">
               <img
-                src={img("1770795263316-f302a878ee64", 900, 1000)}
-                alt="The craftsmanship behind Mihansa Gems"
-                className="w-full h-[340px] sm:h-[460px] lg:h-[560px] object-cover"
+                src={sriLankaHeritageImg}
+                alt="Ceylon Gem Mining Heritage - Mihansa Gems Sri Lanka"
+                className="w-full h-[360px] sm:h-[480px] lg:h-[580px] object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#07090f]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07090f]/80 via-transparent to-[#07090f]/30" />
+              
+              {/* Luxury Frame Accent Lines */}
+              <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-[#c9a84c]/60 pointer-events-none" />
+              <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-[#c9a84c]/60 pointer-events-none" />
             </div>
-            {/* Stat card: inline block on mobile, absolutely positioned on lg */}
+
+            {/* Floating Stat card */}
             <div
-              className="mt-4 lg:mt-0 lg:absolute lg:-bottom-5 lg:-right-10 border p-5 sm:p-6 lg:p-7 flex lg:block items-center gap-5 lg:gap-0 w-full lg:w-52 bg-[#0d1125]"
-              style={{ borderColor: "rgba(201,168,76,0.2)" }}
+              className="mt-5 lg:mt-0 lg:absolute lg:-bottom-6 lg:-right-8 p-6 sm:p-7 flex lg:block items-center gap-5 lg:gap-0 w-full lg:w-60 bg-[#0b0e1a]/90 backdrop-blur-md border border-[#c9a84c]/40 shadow-[0_20px_40px_rgba(0,0,0,0.7),0_0_20px_rgba(201,168,76,0.15)] rounded-sm transition-all duration-300 hover:border-[#c9a84c]/70"
             >
-              <p className="text-3xl sm:text-4xl text-[#c9a84c] font-light lg:mb-1.5" style={DISPLAY}>
-                30+
-              </p>
-              <p className="text-[9px] text-[#f0e8d0]/55 tracking-[0.22em] uppercase leading-snug" style={DISPLAY}>
+              <div className="flex items-baseline gap-2 lg:mb-1.5">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-r from-[#f0e8d0] via-[#c9a84c] to-[#e6ce83]" style={DISPLAY}>
+                  30+
+                </span>
+                <span className="text-[#c9a84c] text-xs font-serif">✦</span>
+              </div>
+              <p className="text-[10px] text-[#f0e8d0]/80 tracking-[0.22em] uppercase leading-relaxed font-medium" style={DISPLAY}>
                 Years of Gem Excellence
               </p>
             </div>
@@ -483,24 +491,28 @@ export default function App() {
 
           {/* Text column */}
           <motion.div {...delay(1)}>
-            <p className="text-[9px] sm:text-[10px] tracking-[0.35em] sm:tracking-[0.4em] text-[#c9a84c] uppercase mb-4 sm:mb-5" style={DISPLAY}>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#c9a84c]/30 rounded-full bg-[#c9a84c]/5 text-[10px] tracking-[0.3em] text-[#c9a84c] uppercase mb-5 sm:mb-6" style={DISPLAY}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] animate-pulse" />
               Our Story
-            </p>
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#f0e8d0] font-light leading-tight mb-6 sm:mb-8" style={DISPLAY}>
-              From the Heart<br />of Ceylon
+              From the Heart<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f0e8d0] via-[#c9a84c] to-[#e6ce83]">
+                of Ceylon
+              </span>
             </h2>
-            <div className="h-px w-14 bg-[#c9a84c]/35 mb-7 sm:mb-9" />
-            <p className="text-[#f0e8d0]/60 leading-7 sm:leading-8 font-light mb-5 sm:mb-6 text-[14px] sm:text-[15px]">
+            <div className="h-px w-20 bg-gradient-to-r from-[#c9a84c]/70 to-transparent mb-7 sm:mb-9" />
+            <p className="text-[#f0e8d0]/70 leading-7 sm:leading-8 font-light mb-5 sm:mb-6 text-[14px] sm:text-[15px]">
               Nestled in Naththandiya — Sri Lanka's hidden gem corridor — Mihansa Gems has
               spent over three decades sourcing the world's most exceptional natural sapphires
               and rare stones. Our deep roots in the region afford us unparalleled access to
               unheated, internationally certified stones of extraordinary character.
             </p>
-            <p className="text-[#f0e8d0]/60 leading-7 sm:leading-8 font-light mb-10 sm:mb-12 text-[14px] sm:text-[15px]">
-              Ancient traders called this island <em>Ratna-Dweepa</em> — the Isle of Gems —
+            <p className="text-[#f0e8d0]/70 leading-7 sm:leading-8 font-light mb-10 sm:mb-12 text-[14px] sm:text-[15px]">
+              Ancient traders called this island <em className="text-[#c9a84c] not-italic font-normal">Ratna-Dweepa</em> — the Isle of Gems —
               and its timeless legacy lives on in every stone we present to the world.
             </p>
-            <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-3 gap-3 sm:gap-5">
               {(
                 [
                   ["500+", "Gems Placed"],
@@ -508,9 +520,9 @@ export default function App() {
                   ["100%", "Certified"],
                 ] as [string, string][]
               ).map(([num, label]) => (
-                <div key={label} className="border-t pt-4" style={{ borderColor: "rgba(201,168,76,0.2)" }}>
+                <div key={label} className="border border-[#c9a84c]/20 bg-[#0a0d18]/60 p-4 rounded-sm hover:border-[#c9a84c]/40 transition-colors">
                   <p className="text-xl sm:text-2xl text-[#c9a84c] font-light mb-1" style={DISPLAY}>{num}</p>
-                  <p className="text-[8px] sm:text-[9px] text-[#f0e8d0]/45 tracking-widest uppercase leading-snug" style={DISPLAY}>
+                  <p className="text-[8px] sm:text-[9px] text-[#f0e8d0]/60 tracking-widest uppercase leading-snug" style={DISPLAY}>
                     {label}
                   </p>
                 </div>
@@ -699,14 +711,22 @@ export default function App() {
           </div>
 
           <div
-            className="border-t pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3"
+            className="border-t pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs font-light text-[#f0e8d0]/40"
             style={{ borderColor: "rgba(201,168,76,0.08)" }}
           >
-            <p className="text-[#f0e8d0]/22 text-xs font-light text-center sm:text-left">
-              © 2024 Mihansa Gems. All rights reserved.
+            <p className="text-center sm:text-left">
+              © 2026 Mihansa Gems. All rights reserved.
             </p>
-            <p className="text-[#f0e8d0]/22 text-[10px] text-center sm:text-right" style={DISPLAY}>
-              Natural Sapphires · Naththandiya · Ceylon
+            <p className="text-center sm:text-right text-[11px]">
+              Designed and Developed by{" "}
+              <a
+                href="https://www.swiftstack.digital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c9a84c]/80 hover:text-[#c9a84c] underline underline-offset-4 transition-colors font-medium"
+              >
+                Swift Stack Digital
+              </a>
             </p>
           </div>
         </div>
